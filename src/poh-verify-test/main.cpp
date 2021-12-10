@@ -1,4 +1,19 @@
-#include "cl_common.h"
+#ifdef __aarch64__
+    #include "gpu_common.h"
+    #include <stdlib.h>
+
+    #define DIE(assertion, call_description)                    \
+    do {                                                        \
+        if (assertion) {                                        \
+                fprintf(stderr, "(%d): ",                       \
+                                __LINE__);                      \
+                perror(call_description);                       \
+                exit(EXIT_FAILURE);                             \
+        }                                                       \
+    } while(0);
+#else
+    #include "cl_common.h"
+#endif
 
 #include <string.h>
 #include <stdio.h>

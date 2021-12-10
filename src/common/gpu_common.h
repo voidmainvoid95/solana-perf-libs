@@ -1,6 +1,10 @@
 #include <assert.h>
 #include <stdio.h>
 
+#ifdef __aarch64__
+    #include <cuda_runtime.h>
+#endif
+
 #ifndef GPU_COMMON_H
 #define GPU_COMMON_H
 

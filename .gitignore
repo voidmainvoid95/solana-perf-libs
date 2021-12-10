@@ -4,3 +4,6 @@
 # build output folders
 /libs/
 /dist/
+
+# IDE folder
+.idea

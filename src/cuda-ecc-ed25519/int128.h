@@ -15,6 +15,11 @@ static __device__ __host__ uint128_t mul_128(uint64_t a, uint64_t b) {
   asm( "mulq %3\n\t"
       : "=a" (result.low), "=d" (result.high)
       : "%0" (a), "rm" (b));
+#elif __aarch64__
+  result.low = a * b;
+  asm( "UMULH %0, %1, %2\n\t"
+      : "=r" (result.high)
+      : "r" (a), "r" (b));
 #endif
   return result;
 }
