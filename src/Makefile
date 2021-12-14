@@ -42,9 +42,9 @@ CFLAGS+=$(CFLAGS_COMMON) -I$(CUDA_DIR)/include -I$(CUDA_SHA256_DIR)
 #CL_CFLAGS_debug:=$(CL_CFLAGS_common) -O0 -g
 #CL_CFLAGS:=$(CL_CFLAGS_$V)
 
-all: $(V)/$(ECC_TEST_BIN) \
-      $(V)/$(POH_VERIFY_MANY_TEST_BIN) \
-      $(V)/lib$(LIB).so
+all: $(V)/lib$(LIB).so
+	 #$(V)/$(ECC_TEST_BIN) \
+      #$(V)/$(POH_VERIFY_MANY_TEST_BIN) \
      #$(V)/$(CL_ECC_TEST_BIN) \
 	 #$(V)/$(CL_POH_VERIFY_MANY_TEST_BIN) \
      #$(V)/lib$(LIB).so \
