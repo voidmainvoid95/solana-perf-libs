@@ -1,9 +1,6 @@
 #include <assert.h>
 #include <stdio.h>
-
-#if defined(__aarch64__) || defined(ONLY_CUDA)
-    #include <cuda_runtime.h>
-#endif
+#include <cuda_runtime.h>
 
 #ifndef GPU_COMMON_H
 #define GPU_COMMON_H
