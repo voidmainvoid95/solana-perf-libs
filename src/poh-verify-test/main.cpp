@@ -1,4 +1,5 @@
-#if defined(__aarch64__) || defined(ONLY_CUDA)
+/*
+ * #if defined(__aarch64__) || defined(ONLY_CUDA)
     #include "gpu_common.h"
     #include <stdlib.h>
 
@@ -14,6 +15,20 @@
 #else
     #include "cl_common.h"
 #endif
+ */
+
+#include "gpu_common.h"
+#include <stdlib.h>
+
+#define DIE(assertion, call_description)                    \
+    do {                                                        \
+        if (assertion) {                                        \
+                fprintf(stderr, "(%d): ",                       \
+                                __LINE__);                      \
+                perror(call_description);                       \
+                exit(EXIT_FAILURE);                             \
+        }                                                       \
+    } while(0);
 
 #include <string.h>
 #include <stdio.h>
