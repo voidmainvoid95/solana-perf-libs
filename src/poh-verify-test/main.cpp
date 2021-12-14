@@ -1,4 +1,4 @@
-#ifdef __aarch64__
+#if defined(__aarch64__) || defined(ONLY_CUDA)
     #include "gpu_common.h"
     #include <stdlib.h>
 
